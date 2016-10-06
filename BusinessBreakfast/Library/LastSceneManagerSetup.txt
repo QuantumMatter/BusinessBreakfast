@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/vacation.unity
+- path: Assets/neighborhood.unity
   isLoaded: 1
   isActive: 1
