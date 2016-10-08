@@ -4,13 +4,12 @@ using System.Collections;
 
 public class UIController : MonoBehaviour {
 
+	int currentIndex = 1;
+	int totalScenes = 1;
+
 	// Use this for initialization
 	void Start () {
-        //NextClicked();
-        Debug.Log(SceneManager.GetActiveScene().buildIndex);
-        if(SceneManager.GetActiveScene().buildIndex == 0){
-
-        }
+		totalScenes = SceneManager.sceneCount;
 	}
 	
 	// Update is called once per frame
@@ -19,21 +18,30 @@ public class UIController : MonoBehaviour {
 	}
 
     public void NextClicked() {
+		currentIndex++;
+		if (currentIndex > totalScenes) {
+			currentIndex = 1;
+		}
+
         Debug.Log("Next button was pressed");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		SceneManager.LoadScene(currentIndex);
     }
 
-    public void PreviousClicked()
-    {
-        Debug.Log("Next button was pressed");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    public void PreviousClicked() {
+		currentIndex--;
+		if (currentIndex < 1) {
+			currentIndex = totalScenes;
+		}
+
+        Debug.Log("Previous button was pressed");
+		SceneManager.LoadScene(currentIndex);
     }
 
-    /*public void HomeClicked()
+    public void HomeClicked()
     {
-        Debug.Log("Next button was pressed");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }*/
+        //Debug.Log("Next button was pressed");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
 
 }

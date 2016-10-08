@@ -2,8 +2,9 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class PrevTransScript : MonoBehaviour, IGvrGazeResponder {
+public class NextTransScript : MonoBehaviour, IGvrGazeResponder {
 
+	// Use this for initialization
 	bool isActive;
 	float activeTime;
 	UIController controller;
@@ -16,11 +17,12 @@ public class PrevTransScript : MonoBehaviour, IGvrGazeResponder {
 		controller = new UIController ();
 
 		foreach (Image image in gameObject.GetComponentsInChildren<Image>()) {
+			Debug.Log ("Found Image");
 			selectionProgress = image;
 		}
 		selectionProgress.fillAmount = 0;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (isActive) {
@@ -30,7 +32,7 @@ public class PrevTransScript : MonoBehaviour, IGvrGazeResponder {
 		}
 
 		if (activeTime >= selectionTime) {
-			previous ();
+			next ();
 		}
 
 		if (!isActive) {
@@ -48,10 +50,10 @@ public class PrevTransScript : MonoBehaviour, IGvrGazeResponder {
 	}
 
 	public void OnGazeTrigger() {
-		previous ();
+		next ();
 	}
 
-	public void previous() {
-		controller.PreviousClicked ();
+	public void next() {
+		controller.NextClicked ();
 	}
 }

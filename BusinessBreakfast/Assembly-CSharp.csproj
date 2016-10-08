@@ -90,7 +90,12 @@
      <Compile Include="Assets\GoogleVR\Scripts\UI\IGvrGazeResponder.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrFPS.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrIntent.cs" />
+     <Compile Include="Assets\HomeButton.cs" />
+     <Compile Include="Assets\HomeTransScript.cs" />
+     <Compile Include="Assets\NextButton.cs" />
+     <Compile Include="Assets\NextTransScript.cs" />
      <Compile Include="Assets\PrevTransScript.cs" />
+     <Compile Include="Assets\PreviousButton.cs" />
      <Compile Include="Assets\UIController.cs" />
      <None Include="Assets\GoogleVR\Distortion\GvrDistortion.cginc" />
      <None Include="Assets\GoogleVR\Legacy\Resources\UnlitTexture.shader" />
