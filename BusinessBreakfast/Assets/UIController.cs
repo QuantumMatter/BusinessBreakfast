@@ -4,7 +4,7 @@ using System.Collections;
 
 public class UIController : MonoBehaviour {
 
-	int currentIndex = 1;
+	//int currentIndex = 1;
 	int totalScenes = 1;
 
 	// Use this for initialization
@@ -18,29 +18,36 @@ public class UIController : MonoBehaviour {
 	}
 
     public void NextClicked() {
-		currentIndex++;
+		/*currentIndex++;
 		if (currentIndex > totalScenes) {
 			currentIndex = 1;
 		}
 
         Debug.Log("Next button was pressed");
-		SceneManager.LoadScene(currentIndex);
+		SceneManager.LoadScene(currentIndex); */
+
+		Debug.Log("Next button was pressed");
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void PreviousClicked() {
-		currentIndex--;
+		/*currentIndex--;
 		if (currentIndex < 1) {
 			currentIndex = totalScenes;
 		}
 
         Debug.Log("Previous button was pressed");
-		SceneManager.LoadScene(currentIndex);
+		SceneManager.LoadScene(currentIndex); */
+
+		Debug.Log("Previous button was pressed");
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+
     }
 
     public void HomeClicked()
     {
-        //Debug.Log("Next button was pressed");
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(0);
     }
 
 

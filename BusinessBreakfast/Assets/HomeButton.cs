@@ -50,4 +50,5 @@ public class HomeButton : MonoBehaviour, IGvrGazeResponder {
 	public void home() {
 		controller.HomeClicked ();
 	}
+		
 }
