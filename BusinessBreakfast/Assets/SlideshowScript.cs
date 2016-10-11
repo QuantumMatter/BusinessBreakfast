@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class SlideshowScript : MonoBehaviour {
 
+    public float speed = 10;
     public Sprite[] sprites;
 
 	// Use this for initialization
@@ -37,7 +38,7 @@ public class SlideshowScript : MonoBehaviour {
 	    for(int i = 0; i < this.transform.childCount; i++)
         {
             GameObject child = this.transform.GetChild(i).gameObject;
-            //child.transform.localPosition
+            child.transform.position = child.transform.position + new Vector3(-speed, 0, 0);
         }
 	}
 }
